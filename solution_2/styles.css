@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+:root {
+    --Soft-red: hsl(10, 79%, 65%);
+    --Cyan: hsl(186, 34%, 60%);
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --Very-pale-orange: hsl(33, 100%, 98%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+body {
+    background-color: var(--Cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.header {
+    background-color: var(--Soft-red);
+    padding: 1em;
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.header__letter p:nth-child(1) {
+    font-weight: 400;
+    font-size: 0.8em;
+}
+
+.header__letter p:nth-child(2) {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.header__fig {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.header__fig::before {
+    content: "";
+    height: 46px;
+    width: 46px;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    position: absolute;
+    right: 25px;
+    z-index: 100;
+}
+
+.header__fig::after {
+    content: "";
+    height: inherit;
+    width: inherit;
+    border-radius: 100%;
+    background-color: var(--Dark-brown);
+    position: absolute;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.card__title p {
+    color: var(--Dark-brown);
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.content__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.2em;
+}
+
+.day {
+    text-align: center;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.day .day__percent-info {
+    background-color: var(--Dark-brown);
+    margin-bottom: 0.5em;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 0.7em;
+    opacity: 0;
+
+    transition: opacity 0.5s;
+}
+
+.day:hover .day__percent-info {
+    opacity: 1;
+}
+
+.day .day__percent {
+    width: 80%;
+    margin: auto;
+    background-color: var(--Soft-red);
+    height: 50px;
+    border-radius: 0.5em;
+
+    transition: background-color 0.5s;
+}
+
+.day:active .day__percent {
+    background-color: var(--Cyan);
+}
+
+.day p {
+    color: var(--Dark-brown);
+    font-size: 0.8em;
+}
+
+.card__separator {
+    height: 1px;
+    background-color: var(--Medium-brown);
+    margin: 1em 0;
+}
+
+.card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card__footer-price p:nth-child(1) {
+    font-size: 0.9em;
+    color: var(--Medium-brown);
+}
+
+.card__footer-price p:nth-child(2) {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--Dark-brown);
+}
+
+.card__footer-percent {
+    text-align: end;
+}
+.card__footer-percent p:nth-child(1) {
+    font-weight: 700;
+    font-size: 0.9em;
+    color: var(--Dark-brown);
+}
+
+.card__footer-percent p:nth-child(2) {
+    color: var(--Medium-brown);
+}
